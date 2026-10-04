@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Rutas que el FileProvider puede compartir con apps externas.
+  "files-path" cubre el directorio devuelto por getFilesDir(),
+  que es donde path_provider ubica getApplicationSupportDirectory() en Android.
+-->
+<paths>
+    <files-path name="killua_files" path="." />
+    <cache-path name="killua_cache" path="." />
+    <external-cache-path name="killua_ext_cache" path="." />
+</paths>
