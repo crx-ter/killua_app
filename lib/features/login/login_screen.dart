@@ -50,8 +50,8 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.of(context).pushReplacement(
         PageRouteBuilder(
           transitionDuration: const Duration(milliseconds: 500),
-          pageBuilder: (_, __, ___) => const HomeScreen(),
-          transitionsBuilder: (_, animation, __, child) =>
+          pageBuilder: (_, _, _) => const HomeScreen(),
+          transitionsBuilder: (_, animation, _, child) =>
               FadeTransition(opacity: animation, child: child),
         ),
       );
@@ -64,8 +64,8 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.of(context).pushReplacement(
         PageRouteBuilder(
           transitionDuration: const Duration(milliseconds: 500),
-          pageBuilder: (_, __, ___) => const HomeScreen(),
-          transitionsBuilder: (_, animation, __, child) =>
+          pageBuilder: (_, _, _) => const HomeScreen(),
+          transitionsBuilder: (_, animation, _, child) =>
               FadeTransition(opacity: animation, child: child),
         ),
       );
@@ -135,7 +135,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            _tienePassword ? 'Accede a tu cuenta' : 'Bienvenido',
+                            _tienePassword
+                                ? 'Accede a tu cuenta'
+                                : 'Bienvenido',
                             style: TextStyle(
                               color: themeConfig.currentTextColor,
                               fontSize: 19 + themeConfig.fontSizeDelta,
@@ -157,15 +159,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ? Icons.verified_user_outlined
                                       : Icons.waving_hand_outlined,
                                   size: 20,
-                                  color: themeConfig.currentTextColor.withValues(alpha: 0.6),
+                                  color: themeConfig.currentTextColor
+                                      .withValues(alpha: 0.6),
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                  _tienePassword
-                                      ? 'Tu cuenta está protegida.'
-                                      : 'Puedes configurar una contraseña en Ajustes.',
+                                  _tienePassword ? 'Tu cuenta está protegida.' : 'Puedes configurar una contraseña en Ajustes.',
                                   style: TextStyle(
-                                    color: themeConfig.currentTextColor.withValues(alpha: 0.75),
+                                    color: themeConfig.currentTextColor
+                                        .withValues(alpha: 0.75),
                                     fontSize: 12 + themeConfig.fontSizeDelta,
                                   ),
                                 ),
@@ -178,11 +180,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                     style: TextStyle(
                                       color: _error
                                           ? Colors.redAccent
-                                          : themeConfig.currentTextColor.withValues(alpha: 0.45),
+                                          : themeConfig.currentTextColor
+                                                .withValues(alpha: 0.45),
                                       fontSize: 11 + themeConfig.fontSizeDelta,
                                     ),
                                   ),
-                                ]
+                                ],
                               ],
                             ),
                           ),
@@ -214,7 +217,9 @@ class _LoginScreenState extends State<LoginScreen> {
         onSubmitted: (_) => _entrar(),
         decoration: InputDecoration(
           hintText: 'Contraseña',
-          hintStyle: TextStyle(color: themeConfig.currentTextColor.withValues(alpha: 0.5)),
+          hintStyle: TextStyle(
+            color: themeConfig.currentTextColor.withValues(alpha: 0.5),
+          ),
           prefixIcon: Icon(
             Icons.lock_outline,
             color: themeConfig.currentTextColor.withValues(alpha: 0.7),

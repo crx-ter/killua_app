@@ -12,7 +12,7 @@ Future<T?> mostrarGlassDialog<T>({
     barrierLabel: 'cerrar',
     barrierColor: Colors.black.withValues(alpha: 0.6),
     transitionDuration: const Duration(milliseconds: 250),
-    pageBuilder: (_, __, ___) {
+    pageBuilder: (_, _, _) {
       return Center(
         child: Material(
           type: MaterialType.transparency,

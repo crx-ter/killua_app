@@ -14,8 +14,8 @@ class AjustesScreen extends StatelessWidget {
     Navigator.of(context).push(
       PageRouteBuilder(
         transitionDuration: const Duration(milliseconds: 300),
-        pageBuilder: (_, __, ___) => pantalla,
-        transitionsBuilder: (_, a, __, child) =>
+        pageBuilder: (_, _, _) => pantalla,
+        transitionsBuilder: (_, a, _, child) =>
             FadeTransition(opacity: a, child: child),
       ),
     );

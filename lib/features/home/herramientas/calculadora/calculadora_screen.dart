@@ -140,7 +140,7 @@ class _CalculadoraScreenState extends State<CalculadoraScreen> {
                   )
                 : ListView.separated(
                     itemCount: _historial.length,
-                    separatorBuilder: (_, __) =>
+                    separatorBuilder: (_, _) =>
                         Divider(color: Colors.white.withValues(alpha: 0.08)),
                     itemBuilder: (_, i) => Text(
                       _historial[i],

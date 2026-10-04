@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../services/theme_config_service.dart';
 
 class HerramientaScaffold extends StatelessWidget {
@@ -64,7 +65,7 @@ class HerramientaScaffold extends StatelessWidget {
                   ),
                 ),
                 Expanded(child: child),
-                if (barraInferior != null) barraInferior!,
+                ?barraInferior,
               ],
             ),
           ),

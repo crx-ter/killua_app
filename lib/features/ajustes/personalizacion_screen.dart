@@ -75,10 +75,7 @@ class _PersonalizacionScreenState extends State<PersonalizacionScreen> {
             ),
           ),
         ),
-        GlassCard(
-          padding: const EdgeInsets.all(16),
-          child: child,
-        ),
+        GlassCard(padding: const EdgeInsets.all(16), child: child),
       ],
     );
   }
@@ -109,7 +106,9 @@ class _PersonalizacionScreenState extends State<PersonalizacionScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: isSelected ? Colors.greenAccent : Colors.transparent,
+                      color: isSelected
+                          ? Colors.greenAccent
+                          : Colors.transparent,
                       width: 2,
                     ),
                   ),
@@ -144,7 +143,12 @@ class _PersonalizacionScreenState extends State<PersonalizacionScreen> {
     );
   }
 
-  Widget _buildSolidBgOption(ThemeConfigService theme, String path, Color color, String label) {
+  Widget _buildSolidBgOption(
+    ThemeConfigService theme,
+    String path,
+    Color color,
+    String label,
+  ) {
     final isSelected = theme.fondoPath == path;
     return GestureDetector(
       onTap: () => theme.setFondoPath(path),
@@ -225,7 +229,7 @@ class _PersonalizacionScreenState extends State<PersonalizacionScreen> {
             const Text('Líneas de alto contraste'),
             Switch(
               value: theme.highContrastLines,
-              activeColor: Colors.greenAccent,
+              activeThumbColor: Colors.greenAccent,
               onChanged: (v) => theme.setHighContrastLines(v),
             ),
           ],
@@ -256,7 +260,11 @@ class _PersonalizacionScreenState extends State<PersonalizacionScreen> {
           spacing: 12,
           children: [
             _buildTextModeOption(theme, null, 'Automático'),
-            _buildTextModeOption(theme, Colors.white.withValues(alpha: 0.92), 'Claro'),
+            _buildTextModeOption(
+              theme,
+              Colors.white.withValues(alpha: 0.92),
+              'Claro',
+            ),
             _buildTextModeOption(theme, Colors.black87, 'Oscuro'),
           ],
         ),
@@ -264,7 +272,11 @@ class _PersonalizacionScreenState extends State<PersonalizacionScreen> {
     );
   }
 
-  Widget _buildTextModeOption(ThemeConfigService theme, Color? color, String label) {
+  Widget _buildTextModeOption(
+    ThemeConfigService theme,
+    Color? color,
+    String label,
+  ) {
     final isSelected = theme.overrideTextColor == color;
     return ChoiceChip(
       label: Text(label),
